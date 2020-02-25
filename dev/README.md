@@ -30,7 +30,7 @@ We are providing a sample of docker script to start a BDS server for test. we st
 
 ## back infrastructure details
 
-### Script: docker-bask.sh
+### Script: docker-back.sh
 
 The script will create a folder in your home directory named bds. The script will copy there all the config files, and start all the container by mounting thie bds folder for various usage.
 
