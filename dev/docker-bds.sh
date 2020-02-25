@@ -10,6 +10,8 @@ mkdir -p ~/bds/server/data
 mkdir -p ~/bds/server/config
 cp ./bds-config/global.conf.json ~/bds/server/config/
 
+docker pull bdverseofficial/bds:dev
+
 docker run -d --restart unless-stopped --name bds \
 -p 49080:49080 \
 -p 9080:9080 \
