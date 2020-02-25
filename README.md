@@ -1,1 +1,1 @@
-# Script for starting using bds
+# Script for starting using BDS
