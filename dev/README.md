@@ -8,7 +8,7 @@ For the back infrastructure we strongly advise to use a Linux OS.
 - First ensure you have docker installed and working
 - Ensure your current user could use docker
 - execute docker-base.sh
-- configure Couchbase by using the url: http://IP:8091
+- configure Couchbase by using the url: http://IP:8091 or execute docker-initcb.sh for a default configuration
     - Create your administrator password
     - All the config files assumed the password will be password, if you chnage this one, change the global.conf.json and metricbeat.docker.yml file.
     - Ensure to activate the Data, Query, Analytics, Index service
@@ -47,6 +47,12 @@ The script will:
 
 - Init FileBeat for Kibana
 - Init MetricBeat for Kibana
+
+### Script: docker-initcb.sh
+
+- Init the cluster with username Administrator and password Password
+- Create the BDS bucket with 256MB
+- Creaye the VAR bucket with 1024MB
 
 ## Bds Server details
 
