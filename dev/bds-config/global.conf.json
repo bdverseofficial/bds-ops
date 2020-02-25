@@ -9,7 +9,8 @@
     "TMM",
     "PIM",
     "CMS",
-    "LIC"
+    "LIC",
+    "SAMPLE"
   ],
   "https": false,
   "serverName": "BDS.DEV.1",
