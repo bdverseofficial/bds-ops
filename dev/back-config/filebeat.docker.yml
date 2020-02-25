@@ -1,0 +1,36 @@
+filebeat.config:
+  modules:
+    path: ${path.config}/modules.d/*.yml
+    reload.enabled: false
+
+setup.kibana:
+  host: "es.internal.bdverse.com:5601"
+
+filebeat.autodiscover:
+  providers:
+    - type: docker
+      templates:
+        - condition:
+             equals:
+               docker.container.image: "nginx"
+          config:
+              - module: nginx
+                access:
+                  input:
+                     type: container
+                     stream: stdout
+                     paths:
+                       - "/var/lib/docker/containers/${data.docker.container.id}/*.log"  
+                error:
+                  input:
+                     type: container
+                     stream: stderr
+                     paths:
+                       - "/var/lib/docker/containers/${data.docker.container.id}/*.log"
+
+
+processors:
+- add_cloud_metadata: ~
+
+output.elasticsearch:
+  hosts: '172.17.0.1'  

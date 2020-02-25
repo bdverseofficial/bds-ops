@@ -1,0 +1,47 @@
+{
+  "farmName": "DEVFARM",
+  "farmPrivateKey": "<MySecretFarmPassword>",
+  "activatedPlugins": [
+    "CRM",
+    "CS",
+    "IMS",
+    "SOC",
+    "TMM",
+    "PIM",
+    "CMS",
+    "LIC"
+  ],
+  "https": false,
+  "serverName": "BDS.DEV.1",
+  "corsOrigins": [
+    "*"
+  ],
+  "externalIp": "172.17.0.1",
+  "enableSearchIndexing": true,
+  "enableJobs": true,
+  "enableBackup": false,
+  "esConfiguration": {
+    "Uri": "http://172.17.0.1:9200"
+  },
+  "cbConfiguration": {
+    "userName": "Administrator",
+    "password": "password",
+    "useSsl": false,
+    "configPollEnabled": false,
+    "enableTcpKeepAlives": false,
+    "servers": [
+      "http://172.17.0.1:8091/pools"
+    ],
+    "connectionPool": {
+      "name": "custom",
+      "maxSize": 5,
+      "minSize": 5
+    }
+  },
+  "elasticApm": {
+    "serverUrls": "http://172.17.0.1:8200"
+  },
+  "log": {
+    "serverUrls": "http://172.17.0.1:9200"
+  }
+}
