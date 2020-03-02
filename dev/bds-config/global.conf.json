@@ -21,6 +21,7 @@
   "enableSearchIndexing": true,
   "enableJobs": true,
   "enableBackup": false,
+  "allowUnSecuredOperation": true,
   "esConfiguration": {
     "Uri": "http://172.17.0.1:9200"
   },
