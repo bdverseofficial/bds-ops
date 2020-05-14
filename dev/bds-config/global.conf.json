@@ -1,45 +1,63 @@
 {
-  "farmName": "DEVFARM",
-  "farmPrivateKey": "<MySecretFarmPassword>",
-  "activatedPlugins": [
-    "CRM",
-    "CS",
-    "IMS",
-    "SOC",
-    "TMM",
-    "PIM",
-    "CMS",
-    "LIC",
-    "SAMPLE"
-  ],
-  "https": false,
-  "serverName": "BDS.DEV.1",
-  "corsOrigins": [
-    "*"
-  ],
-  "externalIp": "172.17.0.1",
-  "enableSearchIndexing": true,
-  "enableJobs": true,
-  "enableBackup": false,
-  "esConfiguration": {
-    "Uri": "http://172.17.0.1:9200"
+  "farm": {
+    "name": "DEVFARM",
+    "privateKey": "<MySecretFarmPassword>"
   },
-  "cbConfiguration": {
-    "userName": "Administrator",
-    "password": "password",
-    "useSsl": false,
-    "configPollEnabled": false,
-    "enableTcpKeepAlives": false,
-    "servers": [
-      "http://172.17.0.1:8091/pools"
+  "plugins": {
+    "activated": [
+      "CRM",
+      "CS",      
+      "SOC",
+      "TMM",
+      "PIM",
+      "CMS",
+      "LIC",
+      "SAMPLE"
     ],
-    "connectionPool": {
-      "name": "custom",
-      "maxSize": 5,
-      "minSize": 5
+    "configurations": {     
+      "CMS": {
+        "EnableStaticGeneration": true        
+      }
     }
   },
-  "elasticApm": {
+  "security": {
+    "allowUnSecuredOperation": true    
+  },
+  "server": {
+    "https": false,
+    "name": "BDS.DEV.1",
+    "corsOrigins": [
+      "*"
+    ],
+    "externalIp": "172.17.0.1"
+  },
+  "searchIndexing": {
+    "enable": true,
+    "es": {
+      "uri": "http://172.17.0.1:9200"
+    }
+  },
+  "jobs": {
+    "enable": true
+  },
+  "dataStore":{
+    "cb": {
+      "userName": "Administrator",
+      "password": "password",
+      "useSsl": false,
+      "configPollEnabled": false,
+      "enableTcpKeepAlives": false,
+      "servers": [
+        "http://172.17.0.1:8091/pools"
+      ],
+      "connectionPool": {
+        "name": "custom",
+        "maxSize": 5,
+        "minSize": 5
+      }
+    }
+  },
+  "apm": {
     "serverUrls": "http://172.17.0.1:8200"
   },
   "log": {
