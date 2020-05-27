@@ -62,5 +62,6 @@
   },
   "log": {
     "serverUrls": "http://172.17.0.1:9200"
-  }
+  },
+  "licence": "<Get your trial licence from www.bdverse.com>"
 }
