@@ -4,6 +4,7 @@ docker rm bds
 mkdir -p ~/bds/server/certificates
 mkdir -p ~/bds/server/plugins
 mkdir -p ~/bds/server/data
+mkdir -p ~/bds/server/logs
 mkdir -p ~/bds/html/cms
 mkdir -p ~/bds/html/assets
 
@@ -22,4 +23,5 @@ docker run -d --restart unless-stopped --name bds \
 -v ~/bds/server/data:/app/thirdpartydata \
 -v ~/bds/html/assets:/app/assets \
 -v ~/bds/html/cms:/app/cms \
+-v ~/bds/server/logs:/app/logs \
 bdverseofficial/bds

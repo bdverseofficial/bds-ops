@@ -6,7 +6,7 @@
   "plugins": {
     "activated": [
       "CRM",
-      "CS",      
+      "CS",
       "SOC",
       "TMM",
       "PIM",
@@ -14,14 +14,14 @@
       "LIC",
       "SAMPLE"
     ],
-    "configurations": {     
+    "configurations": {
       "CMS": {
-        "EnableStaticGeneration": true        
+        "EnableStaticGeneration": true
       }
     }
   },
   "security": {
-    "allowUnSecuredOperation": true    
+    "allowUnSecuredOperation": true
   },
   "server": {
     "https": false,
@@ -40,27 +40,19 @@
   "jobs": {
     "enable": true
   },
-  "dataStore":{
+  "dataStore": {
     "cb": {
       "userName": "Administrator",
       "password": "password",
-      "useSsl": false,
-      "configPollEnabled": false,
-      "enableTcpKeepAlives": false,
-      "servers": [
-        "http://172.17.0.1:8091/pools"
-      ],
-      "connectionPool": {
-        "name": "custom",
-        "maxSize": 5,
-        "minSize": 5
-      }
+      "server": "couchbase://172.17.0.1"
     }
   },
   "apm": {
+    "enable": true,
     "serverUrls": "http://172.17.0.1:8200"
   },
   "log": {
+    "enable": true,
     "serverUrls": "http://172.17.0.1:9200"
   },
   "licence": "<Get your trial licence from www.bdverse.com>"
