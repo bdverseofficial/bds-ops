@@ -40,6 +40,12 @@
   "jobs": {
     "enable": true
   },
+  "asset": {
+    "enable": true
+  },
+  "initData": {
+    "enable": true
+  },
   "dataStore": {
     "cb": {
       "userName": "Administrator",
