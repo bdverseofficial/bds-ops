@@ -16,7 +16,7 @@
     ],
     "configurations": {
       "CMS": {
-        "EnableStaticGeneration": true
+        "enableStaticGeneration": true
       }
     }
   },
