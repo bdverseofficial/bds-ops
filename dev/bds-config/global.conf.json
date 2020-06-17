@@ -37,6 +37,9 @@
       "uri": "http://172.17.0.1:9200"
     }
   },
+  "swagger": {
+    "enable": true
+  },
   "jobs": {
     "enable": true
   },
