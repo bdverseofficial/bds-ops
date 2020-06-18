@@ -49,6 +49,9 @@
   "initData": {
     "enable": true
   },
+  "cache": {
+    "enable": true
+  },
   "dataStore": {
     "cb": {
       "userName": "Administrator",
