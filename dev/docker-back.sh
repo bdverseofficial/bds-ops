@@ -33,24 +33,24 @@ docker run -d --restart unless-stopped --name es \
 -p 9200:9200 -p 9300:9300 \
 -v ~/bds/elasticsearch/data:/usr/share/elasticsearch/data \
 -v ~/bds/elasticsearch/elasticsearch.docker.yml:/usr/share/elasticsearch/config/elasticsearch.yml \
-docker.elastic.co/elasticsearch/elasticsearch:7.7.1
+docker.elastic.co/elasticsearch/elasticsearch:7.9.0
 
 docker run -d --restart unless-stopped --name kibana \
 -v ~/bds/kibana/kibana.docker.yml:/usr/share/kibana/config/kibana.yml \
 -p 5601:5601 \
-docker.elastic.co/kibana/kibana:7.7.1
+docker.elastic.co/kibana/kibana:7.9.0
 
 docker run -d --restart unless-stopped --name apm \
 -v ~/bds/apm/apm-server.docker.yml:/usr/share/apm-server/apm-server.yml \
 -p 8200:8200 \
-docker.elastic.co/apm/apm-server:7.7.1 -strict.perms=false
+docker.elastic.co/apm/apm-server:7.9.0 -strict.perms=false
 
 sudo docker run -d --restart unless-stopped --name=filebeat --user=root \
   -v ~/bds/filebeat/filebeat.docker.yml:/usr/share/filebeat/filebeat.yml:ro \
   -v /var/lib/docker/containers:/var/lib/docker/containers:ro \
   -v /var/run/docker.sock:/var/run/docker.sock:ro \
   --network host \
-  docker.elastic.co/beats/filebeat:7.7.1 filebeat -e -strict.perms=false  
+  docker.elastic.co/beats/filebeat:7.9.0 filebeat -e -strict.perms=false  
 
 sudo docker run -d --restart unless-stopped --name=metricbeat --user=root \
   -v ~/bds/metricbeat/metricbeat.docker.yml:/usr/share/metricbeat/metricbeat.yml:ro \
@@ -59,10 +59,10 @@ sudo docker run -d --restart unless-stopped --name=metricbeat --user=root \
   -v /proc:/hostfs/proc:ro \
   -v /:/hostfs:ro \
   --network host \
-  docker.elastic.co/beats/metricbeat:7.7.1 metricbeat -e -system.hostfs=/hostfs -strict.perms=false 
+  docker.elastic.co/beats/metricbeat:7.9.0 metricbeat -e -system.hostfs=/hostfs -strict.perms=false 
 
 docker run -d --restart unless-stopped --name couchbase \
 -v ~/bds/couchbase/var:/opt/couchbase/var \
 -p 8091-8096:8091-8096 -p 11210-11211:11210-11211 \
-couchbase:6.5.1
+couchbase:6.6.0
 
